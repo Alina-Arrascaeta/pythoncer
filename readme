@@ -1,0 +1,3 @@
+Menú: Ipas - Rubias - Clientes para ver listado de cada uno, clientes se ven en rubias y rubias no se ven, si se graban los datos en la bd
+Desde app/form_ipa ingreso de cervezas ipa, app/form_rubia ingreso de cervezas rubias y app/form_cliente ingreo de nuevos clientes
+Desde buscar_ipa se pueden buscar cervezas tipo IPA , filtra mediante precio. 
