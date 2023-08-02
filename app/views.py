@@ -27,7 +27,7 @@ def rubia(request):
     ctx = {"db": Rubia.objects.all()}
     return render(request, "app/rubia.html", ctx)
 
-def rubia(request):
+def cliente(request):
     ctx = {"db": Cliente.objects.all()}
     return render(request, "app/cliente.html", ctx)
 
