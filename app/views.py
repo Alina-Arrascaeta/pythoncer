@@ -70,6 +70,32 @@ def buscar2(request):
     
     return HttpResponse("No se ingresaron datos para la búsqueda")
 
+def buscarRubia(request):
+    return render(request, "app/rubia.html")
+
+def buscar3(request):
+    if request.GET['precio']:
+        precio = request.GET['precio']
+        cursos = Rubia.objects.filter(precio__icontains=precio)
+        return render(request,
+                      "app/resultadosIpa.html",
+                     {"precio":precio, "db":cursos})
+    
+    return HttpResponse("No se ingresaron datos para la búsqueda")
+
+def buscarCliente(request):
+    return render(request, "app/cliente.html")
+
+def buscar4(request):
+    if request.GET['apellido']:
+        apellido = request.GET['apellido']
+        cursos = Cliente.objects.filter(apellido__icontains=apellido)
+        return render(request,
+                      "app/resultadosCliente.html",
+                     {"precio":apellido, "db":cursos})
+    
+    return HttpResponse("No se ingresaron datos para la búsqueda")
+
 def formRubia(request):
     if request.method == "POST":
         curso2 = Rubia(nombre=request.POST['nombre'], precio=request.POST['precio'])

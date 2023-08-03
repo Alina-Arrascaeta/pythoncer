@@ -12,6 +12,13 @@
     
 
 {% block contenido %}
+
+<form action="/app/buscar4" method="get">
+    {% csrf_token %}
+    <input type="text" name="apellido" id="apellido">
+    <input type="submit" value="Buscar">
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -23,7 +30,7 @@
         </tr>
     </thead>
     <tbody>
-
+  
     {% for curso in db %}
     <tr>
         <td>{{ curso.id }}</td>
@@ -37,6 +44,9 @@
 
  </tbody>
 </table>
+
+<a class="btn btn-primary" style="background-color:#bd6e00; border:#bd6e00" href="{% url 'form_cliente' %}">Cargar nuevo cliente</a>
+
 
 {% endblock contenido %}
 
